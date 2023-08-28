@@ -73,40 +73,20 @@ public class Heap<T> {
         return new ArrayList<>(list);
     }
 
-    /* 创建堆/排序/删除元素, 下沉操作sink */
-
-    private void sinkDown(List<T> list, int index, int listLen) {
-        int tgtChild = 0, lChild, rChild;
-        boolean leftSink, rightSink;
-        while (inRange(index, listLen)) {
-            lChild = LChild(index);
-            rChild = RChild(index);
-            leftSink = inRange(lChild, listLen) && !less(getItem(list, index), getItem(list, lChild));
-            rightSink = inRange(rChild, listLen) && !less(getItem(list, index), getItem(list, rChild));
-            if (leftSink && rightSink)
-                tgtChild = less(getItem(list, lChild), getItem(list, rChild)) ? lChild : rChild;
-            else if (leftSink)
-                tgtChild = lChild;
-            else if (rightSink)
-                tgtChild = rChild;
-            else
-                break;
-            swapVal(list, index, tgtChild);
-            index = tgtChild;
-        }
-    }
-
-    /* 先假设再比较 */
-    private void sinkDown(int x, int listLen) {
+    /**
+     * 创建堆/排序/删除元素, 下沉操作sink 
+     * 先假设再比较
+     * */
+    private void sinkDown(List<T> list, int x, int listLen) {
         // 如果沉到堆底，就沉不下去了
         while (LChild(x) < listLen) {
             // 先假设左边节点较大
             int max = LChild(x);
             // 如果右边节点存在，比一下大小
-            if (RChild(x) < listLen && less(heapList.get(max), heapList.get(RChild(x))))
+            if (RChild(x) < listLen && less(list.get(max), list.get(RChild(x))))
                 max = RChild(x);
             // 结点 x 比俩孩子都大，就不必下沉了
-            if (less(heapList.get(max), heapList.get(x)))
+            if (less(list.get(max), list.get(x)))
                 break;
             // 否则，不符合最大堆的结构，下沉 x 结点
             swapVal(x, max);
