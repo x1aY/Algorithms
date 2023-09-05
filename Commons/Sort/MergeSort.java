@@ -5,20 +5,20 @@ public class MergeSort {
     // 用于辅助合并有序数组
     private static int[] temp;
 
-    public static void sortArray(int[] nums) {
+    public static void mergeSort(int[] nums) {
         temp = new int[nums.length];
-        sort(nums, 0, nums.length - 1);
+        mergerSort(nums, 0, nums.length - 1);
     }
 
     /* 
      * 将子数组 nums[lo..hi] 进行排序
      * 二叉树的后序遍历
      */
-    private static void sort(int[] nums, int lo, int hi) {
+    private static void mergerSort(int[] nums, int lo, int hi) {
         if (lo == hi) return;
         int mid = lo + (hi - lo) / 2;
-        sort(nums, lo, mid);
-        sort(nums, mid + 1, hi);
+        mergerSort(nums, lo, mid);
+        mergerSort(nums, mid + 1, hi);
         merge(nums, lo, mid, hi);
     }
 
@@ -43,7 +43,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int[] nums = { 5, 2, 3, 1 };
-        sortArray(nums);
+        mergeSort(nums);
         System.out.println(nums.toString());
     }
 }
