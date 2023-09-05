@@ -153,15 +153,17 @@ int removeDuplicates(int[] nums) {
 
 ```java
 // 在 s 中寻找以 s[l] 和 s[r] 为中心的最长回文串
-String palindrome(String s, int l, int r) {
+String palindrome(String s, int centerL, int centerR) {
     // 防止索引越界
-    while (l >= 0 && r < s.length()
-            && s.charAt(l) == s.charAt(r)) {
-        // 双指针，向两边展开
-        l--; r++;
+		int left = centerL, right = centerR; 
+    while (left >= 0 && right < s.length()
+            && s.charAt(left) == s.charAt(right)) {
+        // 向两边展开
+        left--; right++;
     }
+  	int len = right - left - 1;
     // 返回以 s[l] 和 s[r] 为中心的最长回文串
-    return s.substring(l + 1, r);
+    return s.substring(left + 1, right);
 }
 
 ```
@@ -296,3 +298,6 @@ int right_bound(int[] nums, int target) {
 # 数组遍历技巧
 
 [讲解](https://labuladong.gitee.io/algo/di-yi-zhan-da78c/shou-ba-sh-48c1d/er-wei-shu-150fb/)
+
+# KMP
+
