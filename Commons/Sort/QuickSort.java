@@ -29,6 +29,20 @@ public class QuickSort {
         return i;
     }
 
+    public static int partitionLoopInvariant1(int[] nums, int left, int right) {
+        if (left > right) return -1;
+        int pivot = nums[left];
+        int pivotIdx = left, smallIdx = left;
+        // all in [left+1, smallIdx], <= pivot; all in (smallIdx, bigIdx), > pivot
+        for (int bigIdx = left + 1; bigIdx <= right; bigIdx++) {
+            if(nums[bigIdx]<=pivot){
+                swap(nums, ++smallIdx, bigIdx);
+            }
+        }
+        swap(nums, pivotIdx, smallIdx);
+        return smallIdx;
+    }
+
     public static void swap(int[] nums, int fstIdx, int secIdx) {
         int temp = nums[fstIdx];
         nums[fstIdx] = nums[secIdx];
