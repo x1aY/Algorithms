@@ -1,4 +1,4 @@
-package CodeCaprice.AA_array.B_doublePointer;
+package CodeCaprice.Array.DoublePointer.old;
 
 import java.util.Arrays;
 

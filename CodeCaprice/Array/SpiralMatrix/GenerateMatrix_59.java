@@ -1,9 +1,9 @@
-package CodeCaprice.AA_array.D_SpiralMatrix;
+package CodeCaprice.Array.SpiralMatrix;
 
 import java.util.*;
 
-public class A_GenerateMatrix_59 {
-    public static Map<Coord, Coord> clockwiseDirMap = new HashMap<Coord, Coord>() {
+public class GenerateMatrix_59 {
+    public static Map<Coord, Coord> clockwiseDirMap = new HashMap<>() {
         {
             put(new Coord(0, 1), new Coord(1, 0));
             put(new Coord(1, 0), new Coord(0, -1));
@@ -88,16 +88,20 @@ public class A_GenerateMatrix_59 {
     }
 
     public static int[][] generateMatrix(int n) {
-        int[][] res = new int[n][n];
-        int i = 0, j = 0, cur = 2;
-        res[0][0] = 1;
-        while (cur <= n * n) {
-            while (j < n - 1 && res[i][j + 1] == 0) res[i][++j] = cur++; // 右
-            while (i < n - 1 && res[i + 1][j] == 0) res[++i][j] = cur++; // 下
-            while (j > 0 && res[i][j - 1] == 0) res[i][--j] = cur++; // 左
-            while (i > 0 && res[i - 1][j] == 0) res[--i][j] = cur++; // 上
+        int left = 0, right = n - 1, top = 0, bottom = n - 1;
+        int[][] mat = new int[n][n];
+        int num = 1, tar = n * n;
+        while (num <= tar) {
+            for (int i = left; i <= right; i++) mat[top][i] = num++; // left to right.
+            top++;
+            for (int i = top; i <= bottom; i++) mat[i][right] = num++; // top to bottom.
+            right--;
+            for (int i = right; i >= left; i--) mat[bottom][i] = num++; // right to left.
+            bottom--;
+            for (int i = bottom; i >= top; i--) mat[i][left] = num++; // bottom to top.
+            left++;
         }
-        return res;
+        return mat;
     }
 
 }

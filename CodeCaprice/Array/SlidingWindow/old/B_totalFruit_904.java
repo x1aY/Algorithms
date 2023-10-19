@@ -1,4 +1,4 @@
-package CodeCaprice.AA_array.C_slidingWindow;
+package CodeCaprice.Array.SlidingWindow.old;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +16,6 @@ public class B_totalFruit_904 {
                     maxFruitLen = Math.max(maxFruitLen, subLen);
             }
             while (type2Count.keySet().size() > 2) {
-                if (type2Count.keySet().size() <= 2)
-                    maxFruitLen = Math.max(maxFruitLen, subLen);
                 subLen--;
                 if (type2Count.put(fruits[left], type2Count.get(fruits[left]) - 1) - 1 == 0) {
                     type2Count.remove(fruits[left]);

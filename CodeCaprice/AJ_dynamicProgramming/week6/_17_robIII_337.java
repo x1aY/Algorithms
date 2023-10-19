@@ -1,6 +1,6 @@
 package CodeCaprice.AJ_dynamicProgramming.week6;
 
-import CodeCaprice.A_codeCommon.TreeNode;
+import Structures.TreeNode;
 
 public class _17_robIII_337 {
 

@@ -2,10 +2,10 @@ package CodeCaprice.AI_greedy.A_common;
 
 import java.util.Stack;
 
-import CodeCaprice.A_codeCommon.TreeNode;
+import Structures.TreeNode;
 
 /**
- * https://programmercarl.com/0968.%E7%9B%91%E6%8E%A7%E4%BA%8C%E5%8F%89%E6%A0%91.html#%E6%80%9D%E8%B7%AF
+ * <a href="https://programmercarl.com/0968.%E7%9B%91%E6%8E%A7%E4%BA%8C%E5%8F%89%E6%A0%91.html#%E6%80%9D%E8%B7%AF">...</a>
  */
 public class Q_minCamera_968 {
     // 先序遍历

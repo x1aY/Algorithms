@@ -1,8 +1,8 @@
-package CodeCaprice.AA_array.A_binarySearch;
+package CodeCaprice.Array.BinarySearch.old;
 
 public class A_binarySearch_704 {
     public static int search(int[] nums, int target) {
-        int mid = 0, left = 0, right = nums.length - 1;
+        int mid, left = 0, right = nums.length - 1;
         while (right >= left) {
             mid = left + (right - left) / 2;
             if (nums[mid] == target)

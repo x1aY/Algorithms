@@ -1,4 +1,4 @@
-package CodeCaprice.AA_array.B_doublePointer;
+package CodeCaprice.Array.DoublePointer.old;
 
 public class D_stringsBackspacesCompare_844 {
 

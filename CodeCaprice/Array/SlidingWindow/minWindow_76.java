@@ -1,6 +1,6 @@
-package CodeCaprice.AA_array.C_slidingWindow;
+package CodeCaprice.Array.SlidingWindow;
 
-public class C_minWindow_76 {
+public class minWindow_76 {
     public static String minWindow(String s, String t) {
         int minLeft = 0, minRight = Integer.MAX_VALUE, tLen = 0;
         int[] tCount = new int[60];
