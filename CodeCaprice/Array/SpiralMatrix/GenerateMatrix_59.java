@@ -3,7 +3,7 @@ package CodeCaprice.Array.SpiralMatrix;
 import java.util.*;
 
 public class GenerateMatrix_59 {
-    public static Map<Coord, Coord> clockwiseDirMap = new HashMap<>() {
+    public static Map<Coord, Coord> clockwiseDirMap = new HashMap<Coord, Coord>() {
         {
             put(new Coord(0, 1), new Coord(1, 0));
             put(new Coord(1, 0), new Coord(0, -1));

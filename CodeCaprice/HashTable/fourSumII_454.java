@@ -1,9 +1,9 @@
-package CodeCaprice.AC_hashTable;
+package CodeCaprice.HashTable;
 
-public class B_fourSumII_454 {
+public class fourSumII_454 {
 
     public static void main(String[] args) {
-        B_fourSumII_454 ans = new B_fourSumII_454();
+        fourSumII_454 ans = new fourSumII_454();
         int[] nums1 = new int[] { 1, 2 }, nums2 = new int[] { -2, -1 },
                 nums3 = new int[] { -1, 2 }, nums4 = new int[] { 0, 2 };
         ans.fourSumCount(nums1, nums2, nums3, nums4);
