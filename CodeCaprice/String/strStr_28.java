@@ -7,9 +7,9 @@ public class strStr_28 {
         int strLen = strList.length, pattLen = pattList.length;
         int[] next = genNext(pattList, pattLen);
         for (int strIdx = 0, pattIdx = 0; strIdx < strLen; strIdx++) {
-            while (pattIdx > 0 && pattList[strIdx] != strList[pattIdx])
+            while (pattIdx > 0 && pattList[pattIdx] != strList[strIdx])
                 pattIdx = next[pattIdx - 1];
-            if (pattList[strIdx] == strList[pattIdx]) pattIdx++;
+            if (pattList[pattIdx] == strList[strIdx]) pattIdx++;
             if (pattIdx == pattLen) return strIdx - pattIdx + 1;
         }
         return -1;
