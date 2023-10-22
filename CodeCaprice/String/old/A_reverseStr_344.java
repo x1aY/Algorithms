@@ -1,16 +1,14 @@
-package CodeCaprice.AD_string;
+package CodeCaprice.String.old;
 
 public class A_reverseStr_344 {
     public void reverseString(char[] s) {
         int len = s.length;
         int start = 0, end = len - 1;
-        char tempC = s[start];
         while (start < end) {
-            tempC = s[start];
+            char tempC = s[start];
             s[start++] = s[end];
             s[end--] = tempC;
         }
-        return;
     }
 
     public static void main(String[] args) {

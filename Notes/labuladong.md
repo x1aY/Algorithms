@@ -143,7 +143,7 @@ int removeDuplicates(int[] nums) {
 
 ```
 
-## 左右指针：
+## 左右指针
 
 ## 回文
 

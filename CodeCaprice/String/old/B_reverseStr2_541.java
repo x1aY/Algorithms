@@ -1,4 +1,4 @@
-package CodeCaprice.AD_string;
+package CodeCaprice.String.old;
 
 public class B_reverseStr2_541 {
 

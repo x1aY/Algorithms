@@ -1,4 +1,4 @@
-package CodeCaprice.AD_string;
+package CodeCaprice.String.old;
 
 public class C_reverseWords_151 {
     public String reverseWords(String s) {
